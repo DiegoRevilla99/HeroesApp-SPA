@@ -2,6 +2,7 @@ import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Navbar } from "../../ui";
 import { DcPage, HeroPage, MarvelPage, SearchPage } from "../pages";
+import { NotFoundPage } from "../pages/NotFoundPage";
 
 export const HeroesRoutes = () => {
 	return (
@@ -13,7 +14,8 @@ export const HeroesRoutes = () => {
 					<Route path="marvel" element={<MarvelPage />} />
 					<Route path="dc" element={<DcPage />} />
 					<Route path="search" element={<SearchPage />} />
-					<Route path="hero" element={<HeroPage />} />
+					<Route path="error404" element={<NotFoundPage />} />
+					<Route path="hero/:id" element={<HeroPage />} />
 					<Route path="/" element={<Navigate to={"/marvel"} />} />
 				</Routes>
 			</div>
